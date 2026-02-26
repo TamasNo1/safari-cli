@@ -76,8 +76,6 @@ export class WebDriver {
       capabilities: {
         alwaysMatch: {
           browserName: 'safari',
-          'safari:automaticInspection': true,
-          'safari:automaticProfiling': true,
         },
       },
     });
