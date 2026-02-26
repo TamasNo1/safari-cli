@@ -350,6 +350,23 @@ program
     const filename = opts.output || `screenshot-${Date.now()}.png`;
     const filepath = resolve(filename);
     writeFileSync(filepath, Buffer.from(base64, 'base64'));
+
+    // Downscale to 1x logical resolution on Retina displays
+    const dpr: number = await driver.executeScript(
+      session.sessionId,
+      'return window.devicePixelRatio || 1;'
+    );
+    if (dpr > 1) {
+      const sipsOut = execSync(
+        `sips -g pixelWidth "${filepath}" 2>/dev/null | tail -1 | awk '{print $2}'`
+      ).toString().trim();
+      const currentWidth = parseInt(sipsOut, 10);
+      if (currentWidth > 0) {
+        const targetWidth = Math.round(currentWidth / dpr);
+        execSync(`sips --resampleWidth ${targetWidth} "${filepath}" >/dev/null 2>&1`);
+      }
+    }
+
     console.log(filepath);
   });
 
