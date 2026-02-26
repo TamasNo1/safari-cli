@@ -1,5 +1,7 @@
 # safari-cli
 
+[![npm](https://img.shields.io/npm/v/@tamasno1/safari-cli)](https://www.npmjs.com/package/@tamasno1/safari-cli)
+
 A command-line tool to control Safari on macOS via WebDriver. No MCP server needed — just a standalone CLI.
 
 Talks directly to `safaridriver` (built into macOS) using the W3C WebDriver protocol. Session state is persisted to `~/.safari-cli/session.json` so commands work across terminal invocations.
@@ -16,13 +18,11 @@ Talks directly to `safaridriver` (built into macOS) using the W3C WebDriver prot
 ## Install
 
 ```bash
-# From this directory
-npm install
-npm run build
-npm link    # makes `safari-cli` available globally
+# Run directly with npx (no install needed)
+npx @tamasno1/safari-cli <command>
 
-# Or run directly
-node dist/cli.js <command>
+# Or install globally from npm
+npm install -g @tamasno1/safari-cli
 ```
 
 ## Quick Start
