@@ -23,5 +23,12 @@
     "node": ">=18.0.0"
   },
   "os": ["darwin"],
-  "license": "MIT"
+  "author": "Tamas Boros",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TamasNo1/safari-cli.git"
+  },
+  "keywords": ["safari", "cli", "webdriver", "macos", "browser"],
+  "files": ["dist", "README.md", "LICENSE"]
 }
