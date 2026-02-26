@@ -1,0 +1,27 @@
+{
+  "name": "safari-cli",
+  "version": "1.0.0",
+  "description": "CLI tool to control Safari browser on macOS via WebDriver",
+  "type": "module",
+  "main": "dist/cli.js",
+  "bin": {
+    "safari-cli": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/cli.js",
+    "dev": "tsc && node dist/cli.js"
+  },
+  "dependencies": {
+    "commander": "^12.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "os": ["darwin"],
+  "license": "MIT"
+}
